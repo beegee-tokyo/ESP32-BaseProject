@@ -1,11 +1,11 @@
-#ESP32 base project
+# ESP32 base project
 This is the base for my ESP32 projects.   
 It contains the basic functionalities needed in `setup()` and `main()`.   
 
 Define basic features in `app-definitions.h`.   
 Setup WiFi credentials (if not using WiFiManager or SmartConfig) in `app-declarations.h`.   
 
-#app-definitions.h
+# app-definitions.h
 ```
 /**********************************************************/
 // Uncomment if the module has a display connected
@@ -21,7 +21,7 @@ Setup WiFi credentials (if not using WiFiManager or SmartConfig) in `app-declara
 // #define CONNSMARTCONFIG // connect using SmartConfig
 ```
 
-#app-declarations.h
+# app-declarations.h
 ```
 /**********************************************************/
 // Put app specific declarations here
@@ -49,6 +49,6 @@ char apName[] = "ESP32-Test-xxxxxx";
 int apIndex = 11; // position of first x in apName[]
 ```
 
-#IMPORTANT
+# IMPORTANT
 The [tzapu's WiFiManager](https://github.com/tzapu/WiFiManager)tzapu's WiFiManager library is not working with ESP32 because of missing WebServer and DNSServer for ESP32.
 For the time being I am using [zhouhan0126 WIFIMANAGER-ESP32](https://github.com/zhouhan0126/WIFIMANAGER-ESP32) which needs to be installed manually in the PlatformIO (or Arduino IDE) library folders.
