@@ -49,6 +49,9 @@ char apName[] = "ESP32-Test-xxxxxx";
 int apIndex = 11; // position of first x in apName[]
 ```
 
+# Dependencies
+This base projects requires [ESP32-MyLib](https://github.com/beegee-tokyo/ESP32-MyLib) to work. ESP32-MyLib is work in progress, check it for the current status.
+
 # IMPORTANT
 The [tzapu's WiFiManager](https://github.com/tzapu/WiFiManager) library is not working with ESP32 because of missing WebServer and DNSServer for ESP32.
 For the time being I am using [zhouhan0126 WIFIMANAGER-ESP32](https://github.com/zhouhan0126/WIFIMANAGER-ESP32) which needs to be installed manually in the PlatformIO (or Arduino IDE) library folders.
