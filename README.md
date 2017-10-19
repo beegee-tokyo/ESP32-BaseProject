@@ -50,5 +50,5 @@ int apIndex = 11; // position of first x in apName[]
 ```
 
 # IMPORTANT
-The [tzapu's WiFiManager](https://github.com/tzapu/WiFiManager)tzapu's WiFiManager library is not working with ESP32 because of missing WebServer and DNSServer for ESP32.
+The [tzapu's WiFiManager](https://github.com/tzapu/WiFiManager) library is not working with ESP32 because of missing WebServer and DNSServer for ESP32.
 For the time being I am using [zhouhan0126 WIFIMANAGER-ESP32](https://github.com/zhouhan0126/WIFIMANAGER-ESP32) which needs to be installed manually in the PlatformIO (or Arduino IDE) library folders.
