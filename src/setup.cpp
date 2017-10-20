@@ -43,7 +43,7 @@ void setup(void)
 		tft.println("Connected to ");
 		tft.println(WiFi.SSID());
 		tft.println("with IP address ");
-		tft.println("WiFi.localIP()");
+		tft.println(WiFi.localIP());
 #endif
 		Serial.print("Connected to " + WiFi.SSID() + " with IP address ");
 		Serial.println(WiFi.localIP());
