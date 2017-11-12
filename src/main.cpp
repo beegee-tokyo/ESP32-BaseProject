@@ -1,9 +1,9 @@
-#include <includes.h>
+#include <setup.h>
 
 /**************************************************************************/
 /*
-    Arduino loop function, called once 'setup' is complete (your own code
-    should go here)
+	Arduino loop function, called once 'setup' is complete (your own code
+	should go here)
 */
 /**************************************************************************/
 void loop(void)

@@ -2,10 +2,10 @@
 This is the base for my ESP32 projects.   
 It contains the basic functionalities needed in `setup()` and `main()`.   
 
-Define basic features in `app-definitions.h`.   
-Setup WiFi credentials (if not using WiFiManager or SmartConfig) in `app-declarations.h`.   
+Define basic features in `setup.h`.   
+Setup WiFi credentials (if not using WiFiManager or SmartConfig) in `setup.cpp`.   
 
-# app-definitions.h
+# setup.h
 ```
 /**********************************************************/
 // Uncomment if the module has a display connected
@@ -21,20 +21,8 @@ Setup WiFi credentials (if not using WiFiManager or SmartConfig) in `app-declara
 // #define CONNSMARTCONFIG // connect using SmartConfig
 ```
 
-# app-declarations.h
+# setup.cpp    
 ```
-/**********************************************************/
-// Put app specific declarations here
-/**********************************************************/
-
-/**********************************************************/
-// Give the board a type and an ID
-/**********************************************************/
-/** Module type used for mDNS */
-const char* MODULTYPE = "type=TestBoard"; // e.g. aircon, light, TestBoard, ...
-/** Module id used for mDNS */
-const char* MODULID = "id=ESP32-Test"; // e.g. ac1, lb1, ESP32-Test, ...
-
 /**********************************************************/
 // Fill these with your WiFi AP credentials
 /**********************************************************/
@@ -42,7 +30,13 @@ const char* MODULID = "id=ESP32-Test"; // e.g. ac1, lb1, ESP32-Test, ...
 const char *ssid = "YOUR_NETWORK_SSID_HERE";
 /** Predefined password used for WiFi connection */
 const char *password = "YOUR_NETWORK_PASSWORD_HERE";
-
+/**********************************************************/
+// Give the board a type and an ID
+/**********************************************************/
+/** Module type used for mDNS */
+const char* MODULTYPE = "type=TestBoard"; // e.g. aircon, light, TestBoard, ...
+/** Module id used for mDNS */
+const char* MODULID = "id=ESP32-Test"; // e.g. ac1, lb1, ESP32-Test, ...
 /** mDNS and Access point name */
 char apName[] = "ESP32-Test-xxxxxx";
 /** Index to add module ID to apName */
@@ -50,8 +44,9 @@ int apIndex = 11; // position of first x in apName[]
 ```
 
 # Dependencies
-This base projects requires [ESP32-MyLib](https://github.com/beegee-tokyo/ESP32-MyLib) to work. ESP32-MyLib is work in progress, check it for the current status.
+This base projects requires [ESP32-MyLib](https://github.com/beegee-tokyo/ESP32-MyLib) to work. ESP32-MyLib is work in progress, check it for the current status. Uncomment 'lib_deps_external = https://github.com/beegee-tokyo/ESP32-MyLib' in 'platformio.ini' to install this library automatically.    
 
 # IMPORTANT
 The [tzapu's WiFiManager](https://github.com/tzapu/WiFiManager) library is not working with ESP32 because of missing WebServer and DNSServer for ESP32.
 For the time being I am using [zhouhan0126 WIFIMANAGER-ESP32](https://github.com/zhouhan0126/WIFIMANAGER-ESP32) which needs to be installed manually in the PlatformIO (or Arduino IDE) library folders.
+Or uncomment 'https://github.com/zhouhan0126/WIFIMANAGER-ESP32', 'https://github.com/zhouhan0126/WebServer-esp32' and 'https://github.com/zhouhan0126/DNSServer---esp32' in 'platformio.ini' to install this libraries automatically.    
