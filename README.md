@@ -51,23 +51,25 @@ int apIndex = 11; // position of first x in apName[]
 # Dependencies
 This base projects requires 4 additional libraries.    
 [ESP32-MyLib](https://github.com/beegee-tokyo/ESP32-MyLib)    
-Following are needed if WiFiManager is used to setup WiFi AP and credentials via portal
+ESP32-MyLib is work in progress, check it for the current status.    
+
+Following are needed if WiFiManager is used to setup WiFi AP and credentials via portal    
 [WIFIMANAGER-ESP32](https://github.com/zhouhan0126/WIFIMANAGER-ESP32.git)    
 [WebServer-esp32](https://github.com/zhouhan0126/WebServer-esp32.git)    
 [DNSServer---esp32](https://github.com/zhouhan0126/DNSServer---esp32.git)    
-ESP32-MyLib is work in progress, check it for the current status.
 
 These libraries can be installed in two ways:    
 ## Manually    
 Download the libraries and manually copy them to correct folders.    
 ## Automatically
 In platformio.ini add or uncomment the following lines:
-```lib_deps =
- +    https://github.com/beegee-tokyo/ESP32-MyLib.git
- +    https://github.com/zhouhan0126/WIFIMANAGER-ESP32.git
- +    https://github.com/zhouhan0126/WebServer-esp32.git
- +    https://github.com/zhouhan0126/DNSServer---esp32.git
+```
+lib_deps =
+  https://github.com/beegee-tokyo/ESP32-MyLib.git
+  https://github.com/zhouhan0126/WIFIMANAGER-ESP32.git
+  https://github.com/zhouhan0126/WebServer-esp32.git
+  https://github.com/zhouhan0126/DNSServer---esp32.git
 ```    
 # IMPORTANT
-On my ESP8266 I use [tzapu's WiFiManager](https://github.com/tzapu/WiFiManager) library. But right now this library is not working with ESP32 because of missing WebServer and DNSServer for ESP32.
+On my ESP8266 I use [tzapu's WiFiManager](https://github.com/tzapu/WiFiManager) library. But right now this library is not working with ESP32 because of missing WebServer and DNSServer for ESP32.    
 For the time being I am using [zhouhan0126 WIFIMANAGER-ESP32](https://github.com/zhouhan0126/WIFIMANAGER-ESP32), 'https://github.com/zhouhan0126/WebServer-esp32' and 'https://github.com/zhouhan0126/DNSServer---esp32'.    
